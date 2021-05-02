@@ -1,0 +1,31 @@
+<!-- {{userList | json}}
+ -->
+
+
+<div class="container">
+        <div class="row">
+                <div class="col-md-6">
+                        <div class="userList">
+
+                                <ng-container *ngFor="let user of userList; index as i">
+                                        <li
+                                                style="list-style-type: none;font-weight: bold;color: red;background: yellow;">
+                                                {{i+1}}.{{user.name}}</li>
+
+                                        <div *ngFor="let td of toDoList;">
+                                                <div *ngIf="user.id == td.userId">
+                                                        <li>{{td.title}}</li>
+                                                </div>
+                                        </div>
+
+                                </ng-container>
+
+
+                        </div>
+
+
+                </div>
+
+        </div>
+
+</div>
